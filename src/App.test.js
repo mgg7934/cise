@@ -10,7 +10,7 @@ import React from 'react';
 
 describe('Addition', () => {
     it('knows that 2 and 2 make 4', () => {
-      const a = 2;
+      var a = 2;
       const b = 2;
     expect(a + b).toBe(4);
     });
