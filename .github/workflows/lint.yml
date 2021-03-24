@@ -2,10 +2,20 @@ name: CI
 on: push
 jobs:
   build:
-    runs-on: ubuntu-latest
+   runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Install modules
-      run: yarn
-    - name: Run ESLint
-      run: eslint . --ext .js,.jsx,.ts,.tsx
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - name: Install
+        run: npm ci  # OR: yarn 
+      - name: Run eslint on changed files
+        uses: tj-actions/eslint-changed-files@v5.1
+        with:
+          config-path: "/path/to/.eslintrc"
+          ignore-path: "/path/to/.eslintignore"
+          extensions: "ts,tsx,js,jsx"
+          extra-args: "--max-warnings=0"
+          exclude-path: | # or a single string "generated.tsx" 
+            generated.tsx
