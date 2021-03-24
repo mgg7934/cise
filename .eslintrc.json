@@ -8,7 +8,9 @@
         "airbnb",
         "plugin:jsx-a11y/recommended",
         "prettier",
-        "prettier/react"
+        "prettier/react",
+        "some-other-config-you-use",
+        "plugin:prettier/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -28,7 +30,7 @@
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "prettier/prettier": [
         "error", {
-         "semi": false
+            "semi": false
         }
       ]
     }
