@@ -8,13 +8,16 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+      - uses: actions/checkout@v2
+  
       - run: npm ci # or yarn install
-      - uses: CDNievas/heroku-action@v1.0 # This is the action
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
-          heroku_email: "mgg7934@hotmail.com"
           heroku_api_key: ${{secrets.HEROKU_TOKEN}}
-          heroku_app_name: "cise-ci-cd"
+          heroku_app_name: "cise-ci-cd" #Must be unique in Heroku
+          heroku_email: "mgg7934@hotmail.com"
+      # - uses: CDNievas/heroku-action@v1.0 # This is the action
+      #   with:
+      #     heroku_email: "mgg7934@hotmail.com"
+      #     heroku_api_key: ${{secrets.HEROKU_TOKEN}}
+      #     heroku_app_name: "cise-ci-cd"
