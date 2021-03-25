@@ -25,9 +25,9 @@
   },
   "husky": {
     "hooks": {
-        "pre-commit": "npm run prettier:check"
+      "pre-commit": "npm run prettier:check"
     }
-},
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
