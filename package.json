@@ -27,7 +27,7 @@
   },
 "husky": {
   "hooks": {
-    "precommit":"echo\"[Husky] precommit\""
+    "pre-commit": "lint-staged"
   }
 
 }
