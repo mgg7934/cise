@@ -25,12 +25,11 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint"
+      "pre-push": "prepush-if-changed"
     }
   },
-  "lint-staged": {
-    "*.+(js|jsx)": ["eslint --fix", "git add"],
-    "*.+(json|css|md)": ["prettier --write", "git add"]
+  "prepush-if-changed": {
+    "src/**/*.js?(x)": "npm run test:unit"
   },
   "eslintConfig": {
     "extends": [
