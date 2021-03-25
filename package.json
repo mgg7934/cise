@@ -23,9 +23,20 @@
     "lint": "eslint",
     "int": "prettier --write .",
     "end": "prettier --check ."
-   
   },
-  
+  "husky":{
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+
+  },
+
+  "lint-staged": {
+
+    "*.+(js|jsx)": ["npm run eslint --fix", "git add"],
+    "*.+(json|css|md)": ["prettier --write", "git add"]
+  },
+
   "eslintConfig": {
     "extends": [
       "react-app",
