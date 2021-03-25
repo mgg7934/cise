@@ -21,15 +21,19 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint",
-    "prettier:fix": "prettier --write ",
-    "prettier:check": "prettier --check ",
-    "precommit": "lint-staged"
+    "prettier:fix": "prettier --write .",
+    "prettier:check": "prettier --check "
+   
   },
-"husky": {
-  "hooks": {
-    "pre-commit": "lint-staged"
+  "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    },
+  "lint-staged": {
+      "**/*": "prettier --write --ignore-unknown"
+    }
   }
-
 }
 
   "eslintConfig": {
